@@ -1,0 +1,138 @@
+/* Demo-only additions: the "fictional data" strip, the clock, a few layout helpers. */
+
+body { min-width: 320px; }
+
+.wp-demo-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 8px 22px;
+  font-size: 12.5px;
+  color: var(--wp-info);
+  background: var(--wp-info-soft);
+  border-bottom: 1px solid rgba(var(--wp-info-rgb), .35);
+}
+
+.wp-demo-strip .btn-link { margin-left: auto; padding: 0; font-size: 12px; color: inherit; text-decoration: underline; }
+
+.wp-topbar-clock {
+  margin-left: 10px;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--wp-text-subtle);
+  white-space: nowrap;
+}
+
+.wp-topbar-clock strong { color: var(--wp-text-muted); font-weight: 600; margin-left: 6px; }
+
+.wp-role-pill {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  margin-left: 4px;
+}
+
+.wp-sidebar-foot {
+  margin-top: auto;
+  padding: 14px 18px 18px;
+  border-top: 1px solid var(--wp-border);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--wp-text-subtle);
+}
+
+.wp-flash { margin: 15px 15px 0; }
+#content .wp-flash { margin: 0 0 15px; }
+
+.dropdown-menu .dropdown-button {
+  display: block;
+  width: 100%;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.42857143;
+  white-space: nowrap;
+  text-align: left;
+  background: none;
+  border: 0;
+}
+
+.wp-combo { position: relative; }
+.wp-combo .fa-search { position: absolute; left: 10px; top: 10px; color: var(--wp-text-subtle); pointer-events: none; }
+.wp-combo .form-control { padding-left: 30px; }
+
+.wp-share { display: block; font-size: 11px; font-weight: 400; color: var(--wp-success); margin-top: 3px; }
+.wp-share.is-remainder { color: var(--wp-orange); }
+
+.wp-pay-list .wp-table { margin-bottom: 0; }
+.wp-status-rule { padding: 12px 18px; font-size: 12px; color: var(--wp-text-subtle); border-top: 1px solid var(--wp-border-soft); }
+.wp-status-rule ol { margin: 6px 0 0; padding-left: 18px; }
+.wp-status-rule li[aria-current] { color: var(--wp-text); font-weight: 600; }
+
+.wp-detail-list { margin: 0; }
+.wp-detail-list dt { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; color: var(--wp-text-subtle); }
+.wp-detail-list dd { margin: 2px 0 12px; color: var(--wp-text); }
+
+.wp-form-narrow { max-width: 760px; }
+
+.wp-settings-role {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.wp-role-option {
+  flex: 1 1 240px;
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--wp-border);
+  border-radius: var(--wp-radius);
+  background: var(--wp-bg-input);
+  cursor: pointer;
+  font-weight: 400;
+  margin: 0;
+}
+
+.wp-role-option.is-active { border-color: var(--wp-accent); background: var(--wp-accent-soft); }
+.wp-role-option input { margin-top: 3px; }
+.wp-role-option strong { display: block; color: var(--wp-text); }
+.wp-role-option span { font-size: 12px; color: var(--wp-text-muted); }
+
+.wp-segmented { display: inline-flex; }
+
+.tab-content-card { padding: 18px; border: 1px solid var(--wp-border); border-top: 0; border-radius: 0 0 var(--wp-radius) var(--wp-radius); background: var(--wp-bg-surface-solid); margin-bottom: 20px; }
+
+.wp-callout {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.wp-callout > .fa { margin-top: 3px; }
+
+.wp-nowrap { white-space: nowrap; }
+
+@media (max-width: 991px) {
+  .wp-page-header { padding: 14px 15px; }
+}
+
+a.wp-dash-stock, a.wp-dash-stock:hover, a.wp-dash-stock:focus { color: inherit; text-decoration: none; }
+a.wp-dash-stock:hover { background: var(--wp-bg-hover); }
+
+.wp-topbar-left { min-width: 0; flex: 1 1 auto; }
+.wp-topbar-right { flex: 0 0 auto; }
+#main-content { min-width: 0; }
+
+@media (max-width: 767px) {
+  .wp-role-pill { display: none; }
+  .wp-topbar-filter { margin-left: 2px; min-width: 0; }
+  .wp-topbar-filter .form-control { min-width: 0; width: 100%; max-width: 140px; }
+  .wp-topbar-right { gap: 0; }
+  .wp-lang-switch { margin-right: 2px; }
+  .wp-lang-switch button { padding: 3px 7px; }
+  .wp-demo-strip { padding: 8px 12px; }
+}
+.btn-primary .wp-dash-muted { color: inherit; opacity: .75; }

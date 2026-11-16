@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Wheel Pro — interactive demo of a garage invoicing and stock system, on fictional data." />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+    <link rel="icon" href="/img/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/img/favicon-16x16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+    <title>Wheel Pro</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("wpdemo-theme");
+          if (t === "light") document.documentElement.setAttribute("data-theme", "light");
+          if (localStorage.getItem("wpdemo-sidebar") === "collapsed") document.documentElement.setAttribute("data-sidebar", "collapsed");
+          if (localStorage.getItem("wpdemo-lang") === "en") document.documentElement.lang = "en";
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript><div class="alert alert-danger no-margin">Merci d'activer JavaScript pour le bon fonctionnement de Wheel Pro</div></noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

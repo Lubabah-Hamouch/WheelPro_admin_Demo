@@ -1,0 +1,167 @@
+/* The one loading indicator: the mark, centred on a dimmed, slightly blurred page. */
+#fullpage-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(5, 12, 22, 0.5);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+:root[data-theme="light"] #fullpage-loader { background: rgba(19, 38, 61, 0.4); }
+
+#fullpage-loader .loader-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 420px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.wp-loader-mark {
+  width: 180px;
+  max-width: 55vw;
+  height: auto;
+  filter: drop-shadow(0 6px 18px rgba(5, 12, 22, 0.55)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.45));
+  animation: wp-loader-pulse 1.4s ease-in-out infinite;
+}
+
+:root[data-theme="light"] .wp-loader-mark {
+  filter: drop-shadow(0 8px 20px rgba(19, 38, 61, 0.35)) drop-shadow(0 0 2px rgba(19, 38, 61, 0.55)) drop-shadow(0 0 1px rgba(19, 38, 61, 0.45));
+}
+
+@keyframes wp-loader-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.94); opacity: 0.78; }
+}
+
+@media (prefers-reduced-motion: reduce) { .wp-loader-mark { animation: none; } }
+
+/* Loading placeholders while the dashboard "fetches". */
+.wp-dash-skeleton {
+  width: 65%;
+  height: 30px;
+  margin-top: 4px;
+  border-radius: 6px;
+  background: var(--wp-border);
+  animation: wp-dash-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes wp-dash-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
+
+/* Bootstrap tooltip, themed and placed by script. */
+.wp-tip { position: fixed; transform: translateX(-50%); z-index: 3000; pointer-events: none; }
+.wp-tip .tooltip-inner { background: var(--wp-bg-elevated); color: var(--wp-text); border: 1px solid var(--wp-border); max-width: 260px; }
+.wp-tip.bottom .tooltip-arrow { border-bottom-color: var(--wp-border); left: 50%; }
+
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus { color: var(--wp-text-subtle); background: none; cursor: not-allowed; }
+.wp-gear-note { font-size: 11px; }
+.wp-dropdown-note { white-space: normal; max-width: 230px; font-size: 11px; line-height: 1.4; }
+
+/* Form and settings pages: Bootstrap panels, heading in the chrome gradient with the accent edge. */
+.panel { border-radius: 10px; overflow: hidden; margin-bottom: 20px; }
+
+.panel-default > .panel-heading,
+.panel > .panel-heading {
+  background: linear-gradient(135deg, var(--wp-chrome-start) 0%, var(--wp-chrome-end) 100%);
+  border-bottom: 1px solid var(--wp-border);
+  border-left: 3px solid var(--wp-accent);
+  color: var(--wp-text);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 15px;
+}
+
+.panel-info { border-color: rgba(var(--wp-info-rgb), .4); }
+.panel-info > .panel-heading { border-left-color: var(--wp-info); color: var(--wp-info); }
+.panel-heading.form-inline { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.panel-heading .checkbox { margin: 0; font-weight: 400; }
+.panel-heading .checkbox label { font-weight: 400; }
+.panel-body.table-content { padding: 0; }
+.panel-body.table-content .table { margin: 0; }
+.panel-body.table-content th { width: 40%; color: var(--wp-text-muted); font-weight: 600; }
+.panel-body > .form-group:last-child, .panel-body > .row:last-child > [class*="col-"] > .form-group:last-child { margin-bottom: 0; }
+
+.nav-tabs-noborder { padding: 0 15px; margin-top: 12px; }
+.nav-tabs-noborder > li > a { border-top-left-radius: 0; border-top-right-radius: 0; border-top: 0 !important; }
+
+.table { color: var(--wp-text); }
+.table > tbody > tr > td, .table > tbody > tr > th { border-top-color: var(--wp-border-soft); }
+.no-margin { margin: 0 !important; }
+
+.wp-pay-now { border-top: 1px solid var(--wp-border-soft); }
+.wp-pay-now-toggle input { margin: 0; }
+.wp-payments-foot th { text-align: right; font-weight: 400; color: var(--wp-text-muted); }
+.wp-payments-foot td { font-weight: 700; }
+
+/* Bordered tables follow the theme rather than Bootstrap's light grey. */
+.table-bordered,
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tbody > tr > td { border-color: var(--wp-border); }
+.table-bordered > tbody > tr > th { color: var(--wp-text-muted); font-weight: 600; }
+.wp-flash { margin: 15px 15px 0; }
+
+/* Bootstrap modals, themed. */
+.modal-backdrop.in { opacity: .62; background: #050C16; }
+.wp-modal { overflow-y: auto; }
+.wp-modal .modal-dialog { margin-top: 70px; }
+.wp-modal .modal-header { background: linear-gradient(135deg, var(--wp-chrome-start) 0%, var(--wp-chrome-end) 100%); border-radius: 6px 6px 0 0; }
+.wp-modal .modal-header h3, .wp-modal .modal-header h4 { margin: 0; color: var(--wp-text); font-weight: 700; }
+.wp-modal .modal-header h3 { font-size: 20px; }
+.wp-modal .modal-header h4 { font-size: 16px; }
+.wp-modal .modal-header .close { color: var(--wp-text); opacity: .7; text-shadow: none; font-size: 16px; }
+.wp-modal .modal-footer .btn-group { float: right; }
+
+
+/* ---------- The loader fades in and out (200 ms), as the real one does ---------- */
+#fullpage-loader { display: block; opacity: 0; visibility: hidden; transition: opacity .2s linear, visibility 0s linear .2s; }
+#fullpage-loader.is-visible { opacity: 1; visibility: visible; transition: opacity .2s linear, visibility 0s; }
+#fullpage-loader .fullpage-loader-close { font-size: 18px; margin: 1.5rem 1.5rem 0 0; color: #fff; text-shadow: 0 1px 4px rgba(5, 12, 22, 0.8); }
+
+/* Bootstrap's tooltips fade in. */
+.wp-tip { animation: wp-tip-in .15s linear; }
+@keyframes wp-tip-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* The alerts carry their icon, as the layout's do. */
+.wp-flash .fa-lg { margin-right: 4px; }
+
+/* ---------- Sign-in page ---------- */
+.wp-login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px 16px;
+}
+.wp-login-page .container { width: 100%; max-width: 100%; }
+.wp-login-page #login {
+  width: 100%;
+  max-width: 400px;
+  min-height: 540px;
+  margin: 0 auto;
+  float: none;
+  left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 40px 36px 36px;
+  background-color: var(--wp-bg-surface-solid);
+  border: 1px solid var(--wp-border-accent);
+  border-radius: 12px;
+  box-shadow: var(--wp-shadow);
+}
+.wp-login-page .login-logo { display: block; width: auto; max-width: min(78%, 260px); max-height: 120px; margin: 0 auto 26px; }
+.wp-login-page .form-group { margin-bottom: 18px; }
+.wp-login-page .control-label { font-size: 12px; font-weight: 600; letter-spacing: .3px; text-transform: uppercase; color: var(--wp-text-muted); }
+.wp-login-page .form-control { height: 44px; border-radius: 8px; }
+.wp-login-page .btn-primary { width: 100%; height: 46px; margin-top: 6px; border-radius: 8px; font-size: 15px; font-weight: 600; }
+.wp-login-page .btn-default { width: 100%; margin-top: 10px; background: none; border: 0; color: var(--wp-text-subtle); font-size: 12.5px; }
+.wp-login-page .btn-default:hover, .wp-login-page .btn-default:focus { background: none; color: var(--wp-accent); }
+.wp-theme-toggle--floating { position: fixed; top: 16px; right: 20px; z-index: 10; border-radius: 8px; font-size: 16px; padding: 10px 12px; }

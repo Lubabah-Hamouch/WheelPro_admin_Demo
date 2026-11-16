@@ -1,0 +1,128 @@
+/* Bootstrap 3 restated in the theme tokens, so it follows the light/dark switch. */
+
+.panel, .panel-default {
+  background-color: var(--wp-bg-surface-solid);
+  border-color: var(--wp-border-accent);
+  box-shadow: var(--wp-shadow);
+}
+
+.panel-body, .panel-footer { background-color: transparent; color: var(--wp-text); border-top-color: var(--wp-border-soft); }
+.well { background-color: var(--wp-bg-elevated); border-color: var(--wp-border); color: var(--wp-text); }
+
+label, .control-label { color: var(--wp-text); }
+
+.form-control {
+  background-color: var(--wp-bg-input);
+  border-color: var(--wp-border);
+  color: var(--wp-text);
+  box-shadow: none;
+}
+
+.form-control:focus { border-color: var(--wp-accent); box-shadow: 0 0 0 2px var(--wp-accent-soft); }
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: var(--wp-bg-elevated);
+  color: var(--wp-text-subtle);
+}
+
+.form-control::placeholder { color: var(--wp-text-subtle); }
+.input-group-addon { background-color: var(--wp-bg-elevated); border-color: var(--wp-border); color: var(--wp-text-muted); }
+.help-block, .text-muted { color: var(--wp-text-subtle); }
+.has-error .form-control { border-color: var(--wp-danger); }
+.has-error .control-label, .has-error .help-block { color: var(--wp-danger); }
+.text-danger { color: var(--wp-danger); }
+.text-success { color: var(--wp-success); }
+
+.btn-default { background: var(--wp-bg-elevated); border-color: var(--wp-border); color: var(--wp-text); }
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+  background: var(--wp-bg-hover);
+  border-color: var(--wp-accent);
+  color: var(--wp-text);
+}
+
+.btn-primary, .btn-primary.active {
+  background: linear-gradient(135deg, var(--wp-accent-deep) 0%, var(--wp-accent) 100%);
+  border-color: transparent;
+  color: var(--wp-text-on-accent);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:focus {
+  background: linear-gradient(135deg, var(--wp-accent) 0%, var(--wp-accent-hover) 100%);
+  border-color: transparent;
+  color: var(--wp-text-on-accent);
+}
+
+.btn-success, .btn-success:hover, .btn-success:focus { background: var(--wp-success); border-color: transparent; color: #FFFFFF; }
+.btn-success:hover { filter: brightness(1.08); }
+.btn-info { background: var(--wp-info); border-color: transparent; color: #FFFFFF; }
+.btn-warning { background: var(--wp-orange); border-color: transparent; color: #FFFFFF; }
+.btn-warning:hover, .btn-warning:focus { background: var(--wp-orange-hover); color: #FFFFFF; }
+.btn-danger, .btn-danger:hover, .btn-danger:focus { background: var(--wp-danger); border-color: transparent; color: #FFFFFF; }
+.btn-link { color: var(--wp-accent); }
+.btn[disabled] { opacity: .5; }
+
+.dropdown-menu {
+  background-color: var(--wp-bg-elevated);
+  border-color: var(--wp-border);
+  box-shadow: var(--wp-shadow);
+}
+
+.dropdown-menu > li > a,
+.dropdown-menu .dropdown-button {
+  color: var(--wp-text);
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu .dropdown-button:hover,
+.dropdown-menu .dropdown-button:focus {
+  background-color: var(--wp-bg-hover);
+  color: var(--wp-text);
+}
+
+.dropdown-menu > li > a { cursor: pointer; }
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover { background-color: var(--wp-accent); color: var(--wp-text-on-accent); }
+.dropdown-menu .divider { background-color: var(--wp-border-soft); }
+.dropdown-header { color: var(--wp-text-subtle); }
+.dropdown-menu .fa-margin { margin-right: 6px; }
+.dropdown-menu > li.is-danger > a { color: var(--wp-danger); }
+
+.nav-tabs { border-bottom-color: var(--wp-border); }
+.nav-tabs > li > a { color: var(--wp-text-muted); cursor: pointer; }
+.nav-tabs > li > a:hover { background-color: var(--wp-bg-hover); border-color: var(--wp-border); }
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: var(--wp-bg-surface-solid);
+  border-color: var(--wp-border) var(--wp-border) transparent;
+  color: var(--wp-accent);
+}
+
+.modal-content { background-color: var(--wp-bg-surface-solid); border-color: var(--wp-border-accent); box-shadow: var(--wp-shadow); color: var(--wp-text); }
+.modal-header, .modal-footer { border-color: var(--wp-border); }
+.modal-header .close { color: var(--wp-text); opacity: .7; text-shadow: none; }
+
+.alert { border-width: 1px; }
+.alert-success { background-color: var(--wp-success-soft); border-color: var(--wp-success); color: var(--wp-success); }
+.alert-info { background-color: var(--wp-info-soft); border-color: var(--wp-info); color: var(--wp-info); }
+.alert-warning { background-color: var(--wp-warning-soft); border-color: var(--wp-orange); color: var(--wp-orange); }
+.alert-danger { background-color: var(--wp-danger-soft); border-color: var(--wp-danger); color: var(--wp-danger); }
+.alert .close { color: inherit; opacity: .7; text-shadow: none; }
+
+.list-group-item { background-color: var(--wp-bg-surface-solid); border-color: var(--wp-border-soft); color: var(--wp-text); }
+
+.label-success { background: linear-gradient(135deg, #00A878, #00C896); color: #fff; border-color: transparent; }
+.label-danger  { background: linear-gradient(135deg, #CC3344, #FF4757); color: #fff; border-color: transparent; }
+.label-warning { background: linear-gradient(135deg, #CC8800, #FFAA00); color: #0D1B2E; border-color: transparent; }
+.label-info    { background: linear-gradient(135deg, #0066CC, #0A84FF); color: #fff; border-color: transparent; }
+.label-primary { background: linear-gradient(135deg, #0066CC, #0A84FF); color: #fff; border-color: transparent; }
+.label-default { background: #64748b; color: #fff; border-color: transparent; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--wp-bg-app); }
+::-webkit-scrollbar-thumb { background: var(--wp-accent); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--wp-accent-bright); }
